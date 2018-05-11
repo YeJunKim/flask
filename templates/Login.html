@@ -25,11 +25,35 @@
             location.href="JoinForm.jsp";
         }    
     </script>
+        <style type="text/css">
+        #center {
+            position: absolute;
+            top: 200px;
+            left: 720px;
+            width: 750px;
+            height: 200px;
+        }
+        #top{
+            position: absolute;
+            top: 10px;
+            left: 1600px;
+            width: 750px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
+        <div id="top">
+        <button class="ui active button"><a href="/Login">Login</a></button>
+        <button class="ui active button"><a href="/register">register</a></button>
+    </div>
     <div id="wrap">
+            <div style="text-align:center">
+        <h1><a href="/">HYJ_Intelligence</a></h1>
+    </div>
+    <div id="center">
         <form name="loginInfo" method="post" action="../pro/LoginPro.jsp" 
-                onsubmit="return checkValue()">
+                onsubmit="return checkValue()" >
             <br><br>
             
             <table>
@@ -46,7 +70,7 @@
             <input type="submit" value="로그인"/>
             <input type="button" value="회원가입" onclick="goJoinForm()" />
         </form>
-        
+        </div>
     </div>    
 </body>
 </html>

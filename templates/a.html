@@ -1,5 +1,487 @@
+
+<!DOCTYPE html>
 <html>
-<body>
-  Hello Webisfree!
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>malwares.com</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="keywords" content="malware, mws, malwarescom, antivirus, infected, trojan, backdoor, virus, scan, malicious, threat, intelligence, dos, ddos, ransomware, worm, exploit" />
+        <meta name="description" content="malwares.com is a service to analyze various advanced, new-born, mutated malicious codes and URLs. You can upload any suspicious files and URLs through desktop or mobile device to check whether malicious or not." />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=900" />
+    
+    
+    <link rel="apple-touch-icon" href="/img/mws_apple_thumb.png"/>
+    <link rel="image_src" href="/img/mws_thumb.png" />
+    <link rel="SHORTCUT ICON" href="/img/common/icon.ico" />
+    <link href="/bundles/css/jquery-ui?v=GnzN_Q5TcUSWtxnE5esXKZ97sHDWTcLWMzBmQUFwbEM1" rel="stylesheet"/>
+
+    <link href="/bundles/css/lang?v=vX9fVW8cHqxF0z70k2jOdo_4za7exYeGDCI7C81ZXIo1" rel="stylesheet"/>
+
+    <link href="/bundles/css/mws/en?v=0CNRx4fcTHBa9duaNJOuiEmwV-G9lac4x1uX79w6TEs1" rel="stylesheet"/>
+
+    
+    <link href="/bundles/css/dropzone?v=aueOZenjXruBBVUPThUazNCRJ3UmsKluPp3Uu0tzyog1" rel="stylesheet"/>
+<link href="/bundles/css/mws/home?v=37sDylEpVxSETWwz0u4iM9S-nqCHHty57-MHU-8QXGk1" rel="stylesheet"/>
+
+
+    <style type="text/css">a {color:#d73d33; text-decoration:none;} .use_os_target{color:#777;text-align:center;font-size:13px;}
+    
+   
+    </style>
+
+    <!--[if lte IE 9]>
+       <script src="/bundles/js/html5?v=M-FeYbBScGLqubVcAZDu6KZsLoZ2X6cIGHdyjLqxrew1"></script>
+
+    <![endif]-->
+</head>
+<body class="srcoll_y">
+    <input type="hidden" name="hidden_hash" id="hidden_hash" />
+    <div id="wrapper_main" class="">
+        
+
+
+<div id="header">
+    <div class="fl marl25">
+        <div class="lang_img">
+            
+            <div class="flag_menu">
+                <ul id="flag_menu">
+                    
+                    <li >
+                        <div id="polyglotLanguageSwitcher">
+		                    <form>
+			                    <select id="polyglot-language-options" style="width:10px">
+				                    <option id="en" value="en"   selected ></option>
+				                    <option id="ko" value="ko"  ></option>
+			                    </select>
+		                    </form>
+	                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+        
+        <span id="user_menu" >
+            <ul class="header_menu">
+		        <li class="menu menu_on" onclick="location.href=('/')">Home</li>
+                                                                                                            </ul>
+        </span>
+        
+    </div>
+    <div class="header_menu_r">
+        <ul class="lgn_before ">
+			<li class="menu cursor " onclick="location.href=('/account/signup');">Join</li>
+			<li class="menu cursor" onclick="fcLoginLayer('1');">Login</li>
+		</ul>
+        <ul class="lgn_next login_user dn">
+            
+            <li class="user menu cursor " onclick="location.href=('/account/modify');">
+                <span class="user_name">                                         </span>
+            </li>
+            <li class="menu cursor" onclick="location.href=('/account/signout')">Logout</li>
+        </ul>
+    </div>
+</div> 
+
+
+        
+<div id="container">
+	<h1 class="logo"><img src="/img/vt/main/logo_mws.png" alt="malwares.com" title="malwares.com" /></h1>
+
+    
+	<div id="sch_box" class="area_center mainbox">
+        <div id="sch_area1" class="area_search area_search_unlogin">
+            <form id="form_sch" name="form_sch" method="post">
+                <input name="__RequestVerificationToken" type="hidden" value="Ff8Js9VKZlclOoGSZbJw7QkcsKc89o1xsYpbFviWF4gX_qRRCZBnL6TnnUqZYRWcO48eMrd9Dilm4Gn0olKFm8T-ZwNKLIcLA2fZnuvyzE1FV7nbdWAKxui57XUcslKpyUM44T55sDpLRPjxsiiOAUGCQL31lqb3cLiHM-qatBQ1" />
+                <input type="hidden" id="gbn" name="gbn" />
+                <input type="hidden" id="tag" name="tag" />
+                <input type="text" id="sch_txt" name="sch_txt" placeholder="Hash / URL / IP / Hostname / #Tag (#Tag1,#Tag2,#Tag3)" class="maininput maininput_unlogin" maxlength="2048" /><span class="schBtn iconset search_ic search unlogin" onclick="fcSch();"></span>
+            </form>
+        </div>
+
+
+
+        <div id="sch_area2" class="area_file_select dn">
+            <input type="text" id="file_route" class="file_text" readonly="readonly" />
+            <span class="iconset icclose area_icclose" onclick="fcArea('1');fcRewrite('4');"></span><img src="/img/vt/main/upload.png" id="upload_area" alt="fileupload" onclick="uploadFile(upload_file);" class="ic_upload" />
+        </div>
+        <span>
+                <input type="file" id="file" name="file" class="file_add dn" onclick="fcArea('2');fcRewrite('4');" />
+            </span>
+        <div id="drag_area" class="drag_area" style="display:none">
+        <form class="dropzone" id="form1" enctype="multipart/form-data" method="post" style="opacity:0;visibility:hidden">
+            <input name="__RequestVerificationToken" type="hidden" value="LRGMZ7soGgWtHhpadrLFDx4KM_uVYZtAZ4Mo7E5akJ3rYuXjjW_cVJmQrFko5mCFW8BPZMbRpDq60y8NamLb29XZSvWXoKW_UDOd2u_X52TqgEVP34OoYvydBOyqCVLOBK-r5LbPYIETHrjxoIOLm-NJIh8bKF0l0sSmyoGswfs1" />
+            <input type="hidden" name="fname" id="fname" />
+            <div class="dz-message" data-dz-message style="font-size: 40px; height: 100%;line-height: 130px; color: white;"><h1 id="drag_file_alert">Drag a file here</h1></div>
+            <div class="fallback" style="display:none">
+                <input name="file" id="drop_file" type="file"/>
+                <input type="submit" value="" />
+            </div>
+        </form>
+        </div>
+    </div>
+   
+
+    <div id="boxes" class="" style="z-index: 110;position: absolute;width:600px;">
+        <div id="dialog" class="window">
+            <div id="dialog_box" class="ui_corner_all layer3 dn" style="width:455px; margin: 0 auto;padding: 20px 0;background: #fdfdfd;position: absolute;left:70px;">
+                <dl id="result_dialog">
+                    <dt class="iconset icguide fl"></dt>
+                    <dd class="fl w300">
+                        <div id="hash_notice1" class="dn"><b>Checking Hash...</b></div>
+                        <div id="hash_notice2" class="dn">Hash in case of leaving this page while extracting there might not be normal analysis.</div>
+                        <div id="upload_notice1" class="dn"><b>Uploading...</b></div>
+                        <div id="upload_notice2" class="dn">In case of leaving this page while uploading file, there might not be normal analysis.</div>
+                        <div id="analy_notice1" class="dn"><b>Analysis in progress</b></div>
+                        <div id="complete_notice1" class="dn"><b>Analysis completed</b></div>
+                    </dd>
+                </dl>
+                <div class="marginauto">
+                    <div id="hash_bar" class="ratecount dn">
+                        <div class="rates dn"><span id="hash_num" class="rates">0</span>% <div id="hash_progress" class="mainupload_progress" style="width:0%;"></div></div>
+                        <div class="mainupload_progress_anal mainupload_progress_bar">Checking Hash...</div>
+                    </div>
+                    <div id="progress_bar_ie" class="ratecount dn">
+                        <div class="mainupload_progress_anal mainupload_progress_bar">Uploading...</div>
+                    </div>
+                    <div id="progress_bar" class="ratecount dn">
+                        <div class="rates"><span id="progressNumber">0%</span> <div id="fProgress" class="mainupload_progress" style="width:0%;"></div></div>
+                    </div>
+                    <div id="analy_bar" class="dn">
+                        <div class="mainupload_progress_anal mainupload_progress_bar">Analyzing ...</div>
+                    </div>
+                    <div id="complete_bar" class="move_result dn" onclick="fcResult();">
+                        <div></div>
+                        <div class="marginauto"><span class="resultVal ui_corner_all ui_button btn_small btn_btype w240"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div id="sch_no_dialog" class="ui_corner_all area_noresult_layer area_stat_layer layer3 dn" style="width:300px;">
+                <span class="wrapicclose"><span class="iconset icclose" onclick="fcRewrite('3');"></span></span>
+                <dl>
+                    <dt class="iconset ic_unresult fl"></dt>
+                    <dd class="fl mart8">
+                        <b>No result</b>
+                    </dd>
+                </dl>
+                <div id="againBtn" class="marginauto">
+                    <span id="no_hash" class="dn ui_corner_all ui_button btn_small btn_yelowtype no_hash_result" onclick="fcRewrite('3');">Try another hash</span>
+                    <span id="no_ip" class="dn ui_corner_all ui_button btn_small btn_yelowtype no_hash_result" onclick="fcRewrite('3');">Try another IP</span>
+                    <span id="no_host" class="dn ui_corner_all ui_button btn_small btn_yelowtype no_hash_result" onclick="fcRewrite('3');">Try another Host</span>
+                    <span id="no_url" class="dn ui_corner_all ui_button btn_small btn_yelowtype no_hash_result" onclick="fcRewrite('3');">Try another Url</span>
+                </div>
+            </div>
+            <div id="sch_dialog" class="ui_corner_all area_stat_layer area_db_layer layer3 dn">
+                <dl>
+                    <dt class="iconset icdb fl"></dt>
+                    <dd class="fl">
+                        <div><b>Loading…</b></div>
+                        <div>Loading analysis results. Please wait a second.</div>
+                    </dd>
+                </dl>
+                <div class="marginauto">
+                    <div class="mainupload_progress_db mainupload_progress_bar">Loading…</div>
+                </div>
+            </div>
+            <div id="sch_error_dialog" class="ui_corner_all area_rlayer area_stat_layer layer3 dn" style="width:400px;">
+                <span class="wrapicclose"><span class="iconset icclose" onclick="fcAlertClose();"></span></span>
+                <dl>
+                    <dt class="iconset icnotice fl"></dt>
+                    <dd class="fl mart8" style="width:300px">
+                        <b id="alert_text"></b>
+                    </dd>
+                </dl>
+                <div id="againBtn_error" class="marginauto"></div>
+            </div>
+        </div>
+    </div>
+    <div id="re_layer" class="ui_corner_all area_rlayer area_stat_layer dn">
+        <span class="wrapicclose"><span class="iconset icclose" onclick="fcRewrite('1');"></span></span>
+        <dl>
+            <dt class="iconset icnotice fl"></dt>
+            <dd class="fl"><b>For search</b><br />Please input a Hash / URL / IP / Hostname / #tag</dd>
+        </dl>
+        <span class="marginauto"><span class="ui_corner_all ui_button btn_small btn_rtype w76" onclick="fcRewrite('1');">Try again</span></span>
+    </div>
+    <div id="file_select_layer" class="ui_corner_all area_rlayer area_stat_layer dn">
+        <dl>
+            <dt class="iconset icnotice fl"></dt>
+            <dd class="fl mart8"><b>Please select a file.</b></dd>
+        </dl>
+        <span class="marginauto"><span class="ui_corner_all ui_button btn_small btn_rtype w80" onclick="fcRewrite('4');">OK</span></span>
+    </div>
+    <div id="file_volm_layer" class="ui_corner_all area_rlayer area_stat_layer dn">
+        <dl>
+            <dt class="iconset icnotice fl"></dt>
+            <dd class="fl w300"><b>Upload volume is min 1Byte, max 200M</b></dd>
+        </dl>
+        <span class="marginauto"><span class="ui_corner_all ui_button btn_small btn_rtype w80" onclick="fcRewrite('4');">OK</span></span>
+    </div>
+
+    <div id="tag_area" style="display:none">
+        <ul class="align_c mart30 lineheight27">
+            <li style="display:inline;margin: 3px; font-size:13px; padding:5px 10px;"><a class="cursor data count_mal" href="/search/tag?tag=npki">#npki</a></li>
+            <li style="display:inline;margin: 3px; font-size:13px; padding:5px 10px;"><a class="cursor data count_mal" href="/search/tag?tag=service">#service</a></li>
+            <li style="display:inline;margin: 3px; font-size:13px; padding:5px 10px;"><a class="cursor data count_mal" href="/search/tag?tag=autorun">#autorun</a></li>
+            <li style="display:inline;margin: 3px; font-size:13px; padding:5px 10px;"><a class="cursor data count_mal" href="/search/tag?tag=exploit">#exploit</a></li>
+            <li style="display:inline;margin: 3px; font-size:13px; padding:5px 10px;"><a class="cursor data count_mal" href="/search/tag?tag=bitcoin">#bitcoin</a></li>
+            <li style="display:inline;margin: 3px; font-size:13px; padding:5px 10px;"><a class="cursor data count_mal" href="/search/tag?tag=obfuscated">#obfuscated</a></li>
+        </ul>
+    </div>
+    <div id="notice_update_div" class="align_c" style="font-weight:bold;margin-top:100px;color:#3a6cb2;font-size:14px;"><span class="cursor" id="notice_update_span"></span></div>
+    <input type="hidden" id="notice_login_chk" value="1"/>
+
+
+</div>
+<div class="push">&nbsp;</div>
+
+<form id="frm" name="frm" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="QwjPquyAXrEGdx8-y12Jh-xLLAt2zZSeNYmdXizJAsAEeC5-57Mq4mbd6oL6Dy5U9tB1sNOT6cFuMlY5JjVUUUoFe0l4TXpcWv8Njv0HsaGgq0bYOvbmucSiDXCmPwwBZDdEdp_aJehO9saYdQmWAMhqeGOlOXsBFJDXtHCkQVA1" />
+    <input type="hidden" name="fcode" id="fcode" />
+    <input type="hidden" name="hash_id" id="hash_id" />
+    <input type="hidden" name="filename" id="filename" />
+    <input type="hidden" name="sha256" id="sha256" />
+    <input type="hidden" name="tag_obt" id="tag_obt" />
+</form>
+<form id="file_frm" name="file_frm" method="post">
+    <input type="hidden" name="user_os" id="user_os" value=""/>
+    <input type="hidden" name="route" id="route" value=""/>
+</form>
+<input type="hidden" id="hash_chk" value="" />
+
+    </div>
+    <div id="lgn" class="dn">
+    <form id="form2" name="form2" method="post">
+        <input name="__RequestVerificationToken" type="hidden" value="iJefA2sOEqcrhK4vXOvur1q6C3-TBdvX5ZPWmP1-8LJyeM3QwqVAcJpaV0599XkXz5s4wJtv3E1fGeZMCaDPBBFcdEDSqYkIN10TZS99KdU9basv0w7UaHkq5_m6rbMsSHFjJkMLHmMl3JUaX5xyWBfZya8dcKhvoDwAJhsRP0o1" />
+        <ul class="dropdown ui_corner_all area_rlayer" id="login_layer">
+            <li class="lgn_tit">Login</li><li><span class="wrapicclose iconset icclose" onclick="fcLoginLayer('2');"></span></li>
+            <li><input type="text" id="lgn_email" name="lgn_email" class="lgn_input lgn_email" placeholder="Email" maxlength="100" /></li>
+	        <li><input type="password" id="lgn_passwd" name="lgn_passwd" class="lgn_input lgn_email"  maxlength="30" placeholder="Password" /></li>
+            <li class="lgn_alrt area_ylayer dn">
+                <dl>
+                    <dt class="iconset ic_wrong"></dt>
+                    <dd class="lgn_alrt1 fl dn">Invalid email or password</dd>
+                    <dd class="lgn_alrt2 fl dn">Verify your email authentication</dd>
+                </dl>
+            </li>
+            <li class="lbl_login btn_login"><span class="ui_corner_all ui_button btn_mid btn_rtype btn_login">Login</span></li>
+            <li class="last">
+                <div class="fl"><input type="checkbox" id="email_chk" name="email_chk" value="email_chk" class="email_chk" checked="checked" /><label for="email_chk">Save email address</label></div>   
+                <div class="passwd_help" onclick="location.href='/account/resetpw'"><span class="ui_corner_all ui_button btn_smaller btn_rtype btn_password">Find password</span></div>    
+            </li>
+        </ul>
+    </form>
+</div>
+<div id="mask"></div>
+    <div id="footer">
+    <div class="area_footer">
+		<span class="cursor" onclick="location.href='/about/PrivacyPolicy'">Terms of Service &amp; Privacy Policy</span>
+        <span class="bar_footer">|</span><span onclick="location.href='/about/api'" class="cursor">API</span>
+        <span class="bar_footer">|</span><span onclick="window.open('http://www.facebook.com/malwarescom','','');" class="cursor">Facebook</span>
+        <span class="bar_footer">|</span><span onclick="window.open('https://twitter.com/malwarescom','','');" class="cursor">Twitter</span>
+        <span class="bar_footer">|</span><span class="posir"><span onclick="window.open('http://story.malwares.com/','','');" class="cursor">Story</span>
+        </span><span class="bar_footer">|</span><span class="copy_malwares" onclick="location.href='/about/info'">&copy; malwares.com</span>
+        <span class="bar_footer">|</span><span class="mail"><a href="mailto:root@malwares.com">root@malwares.com</a></span>
+        <!-- <span class="bar_footer">|</span><span onclick="location.href='/about/opensource'" class="cursor">Open Source Attribution</span></span> -->
+        <span class="bar_footer">|</span><span onclick="location.href='/about/notice'" class="cursor">Notice</span><span id="FooterReleaseNewBtn" class="iconset ico_new" style="display:none;"></span>
+	</div>
+</div>
+    <script src="/bundles/js/jquery?v=jvjI2ykYqXUxHPG2OTkAYpklfsmSwLKblyx3Up2s7vQ1"></script>
+
+    <script src="/bundles/js/mws/resources/en?v=5LQke26PRVg6ptHPwhB9BFrIvpB5FiUm7nMAMNbkURs1"></script>
+
+    <script src="/bundles/js/mws?v=LjQ1NJNUV7t60xNTJstTMTXbfuUzhz-I4-uFNXhKHKE1"></script>
+
+    
+<!--[if lte IE 9]>
+<script type="text/javascript" src="/Scripts/ext/jquery.placeholder.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $(function () {
+        $('input, textarea').placeholder();
+    });
+});
+</script>
+<![endif]-->
+
+
+<script>
+    var browser = "Chrome";
+    //(IE,safari는 버전 체크 필요) 
+    var browser_type = ["Chrome"];
+    var upload_file = "";
+    var edge_check = false;
+</script>
+<script src="/bundles/js/mws/home_no_login?v=Lxd8WNLmsz8P3lJmUe8XomyYm43EHgtkSXde6zOwWHo1"></script>
+
+
+
+<script type="text/javascript">
+var useridx = "0";
+var searchstr = "Hash / URL / IP / Hostname / #Tag (#Tag1,#Tag2,#Tag3)";
+var lastTarget = null;
+var dropzone = document.getElementById("drag_area");
+var browser_version = Number(get_version_of_browser()); 
+
+var is_drag = false;
+        
+$("#file").change(function () {
+    document.getElementById('file_route').value=this.value;
+    document.getElementById('filename').value=this.value;
+});
+    
+        $("#form1").attr("action", "https://www.malwares.com");
+    
+$(document).ready(function () {
+    var wid = $(window).width() - 17;
+    var marginleft = (wid - 600) / 2 * -1;
+    $("#sch_txt").val("");
+   
+
+        
+    $("#tag_area").css("width", wid);
+    $("#tag_area").css("margin-left", marginleft);
+    $("#tag_area").css("text-align", "center");
+    $("#tag_area").show();
+    
+    //IE 10,11, Edge, Chrome, Firefox, Safari 상위(6이상)버전만 드래그 업로드 지원
+    if (drag_browser_chk())
+    {
+        window.addEventListener("dragenter", function(e)
+        {
+            e.preventDefault();
+            lastTarget = e.target; 
+            //$("#form1").css("visibility", "");
+            //$("#form1").css("opacity", "1");
+            $("#drag_area").show();
+            return false;
+        });
+
+        window.addEventListener("mouseover", function(e)
+        {
+            e.preventDefault();
+            $("#drag_area").hide();
+        });
+
+
+        dropzone.addEventListener("dragenter", function(e)
+        {
+            e.preventDefault();
+           
+            $("#form1").css("visibility", "");
+            $("#form1").css("opacity", "1");
+            return false;
+        });
+
+
+
+        dropzone.addEventListener("dragover", function(e)
+        {
+            //e.preventDefault();
+           
+            $("#form1").css("visibility", "");
+            $("#form1").css("opacity", "1");
+            return false;
+
+        });
+
+        dropzone.addEventListener("dragleave", function(e)
+        {
+            e.preventDefault();
+           
+            if (lastTarget != e.target && (lastTarget.id != "drag_area" && lastTarget.id != "drag_file_alert"))
+            {
+                $("#form1").css("visibility", "hidden");
+                $("#form1").css("opacity", "0");
+            }
+            return false;
+        });
+            
+            //chrome, Edge 버전 작동
+            document.getElementById("form1").addEventListener("drop", function(e)
+            {
+                upload_file = e.dataTransfer.files; 
+                //var upload_file = e.dataTransfer.files;
+                is_drag = true;
+                handle_file_select(e);
+                if (browser == "Chrome")
+                {
+                    document.getElementById('file').files = upload_file;
+                }
+                else {
+                    document.getElementById('file').files[0] = upload_file[0];
+                }
+                handle_file_select(e);
+                $("#form1").css("visibility", "hidden");
+                $("#form1").css("opacity", "0");
+            },false);
+            
+        
+    }
+});
+
+
+// 검색 <=> 파일 업로드
+function fcArea(val) {
+    // 파일 업로드
+    if (val == "2") {
+            // 검색
+        } else {
+            $("#sch_area2").addClass("dn");
+            $("#sch_area1").removeClass("dn");
+        }
+    }
+
+function fcSetSearchVal() {
+        
+            $("#sch_txt").val(g_sha256);
+            $("#sch_txt").focus();
+        
+}
+
+
+// 태그 검색 링크
+function fctagsh(val) {
+    location.href = "/search/tag?tag=" + val.replace("#", "");
+}
+
+if (resource.lang == "ko") {
+    $("#notice_update_span").text('"지금, MAX Anti-Virus로 여러분의 PC를 보호하세요."');
+}
+else {
+    $("#notice_update_span").text('"You can protect your PC with MAX Anti-Virus now."');
+}
+$("#notice_update_span").click(function () {
+$("#notice_login_chk").val("2");
+    
+        fcLoginLayer('1');
+    
+});
+
+//IE 8 버전 indexOf 함수 지원
+if (!Array.indexOf) {
+  Array.prototype.indexOf = function (obj, start) {
+    for (var i = (start || 0); i < this.length; i++) {
+      if (this[i] == obj) {
+        return i;
+      }
+    }
+    return -1;
+  }
+}
+
+</script>
+
+
+
+<!--[if lte IE 11]>
+    <script src="/bundles/js/mws/home-lt-ie11?v=8EKB_ytwSr459ESVo-IPdlGinDhOSB-Muhvgmp7IPag1"></script>
+
+<![endif-->
+
+    
+    <!--en//-->
 </body>
 </html>
